@@ -9,7 +9,10 @@ function App() {
     setSearchQuery(event.target.value);
   }
 
-  function getLocation(event) {}
+  function getLocation(event) {
+    const API =
+      "https://eu1.locationiq.com/v1/search?key=${process.env.REACT_APP_API_KEY}&q=${searchQuery}&format=json";
+  }
 
   return (
     <div className="App">
