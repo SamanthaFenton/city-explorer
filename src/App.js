@@ -9,13 +9,13 @@ function App() {
 
   function handleSearch(event) {
     setSearchQuery(event.target.value);
-    // console.log(searchQuery);
+    console.log(searchQuery);
   }
 
   async function getLocation(event) {
     const API =
       "https://eu1.locationiq.com/v1/search?key=${process.env.REACT_APP_API_KEY}&q=${searchQuery}&format=json";
-    // console.log(API);
+    console.log(API);
     const res = await axios.get(API);
     setLocation(res.data[0]);
     handleMap(res.data[0]);
@@ -23,7 +23,7 @@ function App() {
 
   function handleMap(data) {
     const API =
-      "GET https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_API_KEY}&center=${data,lat},${data,lon}&zoom=9";
+      "https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_API_KEY}&center=${data,lat},${data,lon}&zoom=9";
     setMap(API);
   }
 
